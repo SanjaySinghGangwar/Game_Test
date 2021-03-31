@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Game</string>
+    <string name="score"><![CDATA[SCORE : 0]]></string>
+</resources>
