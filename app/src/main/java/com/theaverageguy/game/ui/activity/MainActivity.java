@@ -1,4 +1,4 @@
-package com.theaverageguy.game;
+package com.theaverageguy.game.ui.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,7 +11,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.theaverageguy.game.R;
 import com.theaverageguy.game.databinding.ActivityMainBinding;
+import com.theaverageguy.game.utils.AppSharePreference;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -23,6 +25,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayList<Integer> rand = new ArrayList<>();
     ArrayList<Integer> randWords = new ArrayList<>();
     Random random;
+    AppSharePreference sharedPreferences;
+
+    int shuffle = 2000;
+    int setGrey = 1000;
+    int checkLife = 2000;
+
 
     private ActivityMainBinding bind;
 
@@ -34,9 +42,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(bind.getRoot());
 
         intAllComponents();
+        intiLevel();
+
         updateUiEverySecond();
         checkForLife();
     }
+
+    private void intiLevel() {
+        shuffle = sharedPreferences.getShuffle();
+        setGrey = sharedPreferences.getGrey();
+        checkLife = sharedPreferences.getCheckLife();
+    }
+
 
     private void checkForLife() {
         Handler handler = new Handler();
@@ -50,10 +67,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     showGameOver();
                 }
             }
-        }, 2000);
+        }, checkLife);
     }
 
     private void intAllComponents() {
+        sharedPreferences = new AppSharePreference(this);
         random = new Random();
         bind.zero.setOnClickListener(this);
         bind.two.setOnClickListener(this);
@@ -76,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void run() {
                 updateUiEverySecond();
             }
-        }, 2000);
+        }, shuffle);
     }
 
     private void setGreyColor() {
@@ -87,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int greyIndex = random.nextInt(4);
                 convertNumberInWordsForGrey(greyIndex);
             }
-        }, 1000);
+        }, setGrey);
 
     }
 
@@ -217,5 +235,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         alertDialogBuilder.create().show();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
 
+    }
 }
