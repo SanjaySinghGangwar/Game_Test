@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ui.bottomSheets.Rules">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Game objective:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. On every 1 second the color of any one of the box will turn in to Grey color.\n2. The Grey color will remain for 1 complete second.\n3. After 1 second the current greyed box will change its color to it’s original color and ANY OTHER RANDOM box will turn grey.\n4. User needs to tap on the box while it is grey in every 1 second. So there will be atleast 1 tap in each second." />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Game conditions:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. If User taps on the box while it is grey; increase the score +1.\n2. If the user fails to tap on the box while it is grey and taps a colored box; GAME OVER.\n3. If the user fails to tap on any of the box in 1 second; GAME OVER." />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

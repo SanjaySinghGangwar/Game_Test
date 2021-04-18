@@ -24,6 +24,22 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <TextView
+        android:id="@+id/rules"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/rules"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <TextView
+        android:id="@+id/share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/share"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <TextView
         android:id="@+id/setting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
