@@ -63,7 +63,7 @@ public class AppSharePreference {
     }
 
     public Boolean getAds() {
-        return sharedPreferences.getBoolean("ads", false);
+        return sharedPreferences.getBoolean("ads", true);
     }
 
     public void setAds(Boolean value) {
@@ -72,7 +72,7 @@ public class AppSharePreference {
     }
 
     public Boolean getMusic() {
-        return sharedPreferences.getBoolean("music", false);
+        return sharedPreferences.getBoolean("music", true);
     }
 
     public void setMusic(Boolean value) {

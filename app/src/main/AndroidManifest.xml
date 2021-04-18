@@ -24,6 +24,7 @@
             android:resource="@array/preloaded_fonts" />
 
         <service android:name="com.theaverageguy.fastestFinger.service.musicService" />
+
     </application>
 
 </manifest>

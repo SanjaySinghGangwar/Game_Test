@@ -1,5 +1,6 @@
 package com.theaverageguy.fastestFinger.ui.activity;
 
+import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -266,22 +267,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showGameOver() {
-        setHighScore();
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        if(!((MainActivity.this).isFinishing()))
+        {
+            setHighScore();
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
-        alertDialogBuilder.setMessage("Game Over. Your score is " + score);
-        alertDialogBuilder.setNegativeButton("RESTART", (dialog, which) -> {
-            Intent intent = new Intent(MainActivity.this, MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            alertDialogBuilder.setMessage("Game Over. Your score is " + score);
+            alertDialogBuilder.setNegativeButton("RESTART", (dialog, which) -> {
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-            startActivity(intent);
-        });
+                startActivity(intent);
+            });
 
-        alertDialogBuilder.setPositiveButton("Exit", (dialog, which) -> onBackPressed());
-        AlertDialog view = alertDialogBuilder.create();
-        view.setCancelable(false);
-        view.show();
+            alertDialogBuilder.setPositiveButton("Exit", (dialog, which) -> onBackPressed());
+            AlertDialog view = alertDialogBuilder.create();
+            view.setCancelable(false);
+            view.show();
+        }
+
+
         //alertDialogBuilder.create().show();
 
     }
