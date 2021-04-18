@@ -62,5 +62,23 @@ public class AppSharePreference {
         editor.commit();
     }
 
+    public Boolean getAds() {
+        return sharedPreferences.getBoolean("ads", false);
+    }
+
+    public void setAds(Boolean value) {
+        editor.putBoolean("ads", value);
+        editor.commit();
+    }
+
+    public Boolean getMusic() {
+        return sharedPreferences.getBoolean("music", false);
+    }
+
+    public void setMusic(Boolean value) {
+        editor.putBoolean("music", value);
+        editor.commit();
+    }
+
 
 }

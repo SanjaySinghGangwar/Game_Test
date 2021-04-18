@@ -6,8 +6,9 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.theaverageguy.game.R
 import com.theaverageguy.game.databinding.ActivityNewGameBinding
+import com.theaverageguy.game.ui.bottomSheets.HighScore
 import com.theaverageguy.game.ui.bottomSheets.level
-import com.theaverageguy.game.utils.utils.showToast
+import com.theaverageguy.game.ui.bottomSheets.settingFragment
 import kotlin.system.exitProcess
 
 class NewGame : AppCompatActivity(), View.OnClickListener {
@@ -26,6 +27,7 @@ class NewGame : AppCompatActivity(), View.OnClickListener {
         bind.level.setOnClickListener(this)
         bind.exit.setOnClickListener(this)
         bind.highScore.setOnClickListener(this)
+        bind.setting.setOnClickListener(this)
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -66,7 +68,13 @@ class NewGame : AppCompatActivity(), View.OnClickListener {
                 level.showNow(supportFragmentManager, "Level")
             }
             R.id.highScore -> {
-                showToast(v.context, "YES HighScore")
+                val highScore = HighScore();
+                highScore.showNow(supportFragmentManager, "High Score")
+
+            }
+            R.id.setting -> {
+                val setting = settingFragment()
+                setting.showNow(supportFragmentManager, "setting")
             }
             R.id.exit -> {
                 this@NewGame.finish()

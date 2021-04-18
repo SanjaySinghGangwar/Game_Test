@@ -7,16 +7,16 @@ import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.theaverageguy.game.R
 import com.theaverageguy.game.databinding.LevelBinding
+import com.theaverageguy.game.utils.AppSharePreference
 import com.theaverageguy.game.utils.utils.showToast
 
 
 class level : BottomSheetDialogFragment(), View.OnClickListener {
 
     private var _binding: LevelBinding? = null
-
-    // This property is only valid between onCreateView and
-// onDestroyView.
     private val bind get() = _binding!!
+    private var appSharePreference: AppSharePreference? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,19 +40,37 @@ class level : BottomSheetDialogFragment(), View.OnClickListener {
         bind.easy.setOnClickListener(this)
         bind.medium.setOnClickListener(this)
         bind.hard.setOnClickListener(this)
+        appSharePreference = AppSharePreference(context)
     }
 
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.easy -> {
-                showToast(v.context, "Easy")
+                appSharePreference?.shuffle = 2000
+                appSharePreference?.grey = 1000
+                appSharePreference?.checkLife = 2000
+                dismiss()
+                showToast(context!!, "Easy is selected")
             }
             R.id.medium -> {
-                showToast(v.context, "medium")
+                appSharePreference?.shuffle = 1500
+                appSharePreference?.grey = 750
+                appSharePreference?.checkLife = 1500
+                dismiss()
+                showToast(context!!, "Medium is selected")
             }
             R.id.hard -> {
-                showToast(v.context, "hard")
+                appSharePreference?.shuffle = 1000
+                appSharePreference?.grey = 500
+                appSharePreference?.checkLife = 1000
+                dismiss()
+                showToast(context!!, "Hard is selected")
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
