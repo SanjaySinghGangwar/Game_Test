@@ -1,6 +1,5 @@
 package com.theaverageguy.fastestFinger.ui.activity;
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -19,7 +18,7 @@ import androidx.core.content.ContextCompat;
 import com.theaverageguy.fastestFinger.R;
 import com.theaverageguy.fastestFinger.databinding.ActivityMainBinding;
 import com.theaverageguy.fastestFinger.service.musicService;
-import com.theaverageguy.fastestFinger.utils.AppSharePreference;
+import com.theaverageguy.fastestFinger.ui.modelClasses.AppSharePreference;
 
 import java.util.ArrayList;
 import java.util.List;

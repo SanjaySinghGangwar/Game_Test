@@ -14,7 +14,7 @@ import com.theaverageguy.fastestFinger.ui.bottomSheets.HighScore
 import com.theaverageguy.fastestFinger.ui.bottomSheets.Rules
 import com.theaverageguy.fastestFinger.ui.bottomSheets.level
 import com.theaverageguy.fastestFinger.ui.bottomSheets.settingFragment
-import com.theaverageguy.fastestFinger.utils.AppSharePreference
+import com.theaverageguy.fastestFinger.ui.modelClasses.AppSharePreference
 import kotlin.system.exitProcess
 
 
@@ -47,7 +47,11 @@ class NewGame : AppCompatActivity(), View.OnClickListener {
         bind.highScore.setOnClickListener(this)
         bind.setting.setOnClickListener(this)
         bind.share.setOnClickListener(this)
-        sharedPreferences = AppSharePreference(this)
+        bind.otherApps.setOnClickListener(this)
+        sharedPreferences =
+            AppSharePreference(
+                this
+            )
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -99,6 +103,10 @@ class NewGame : AppCompatActivity(), View.OnClickListener {
             R.id.setting -> {
                 val setting = settingFragment()
                 setting.showNow(supportFragmentManager, "setting")
+            }
+            R.id.otherApps -> {
+                val intent = Intent(this, AllApps::class.java)
+                startActivity(intent)
             }
             R.id.exit -> {
                 this@NewGame.finish()

@@ -50,11 +50,17 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:21.1.0'
     implementation 'com.google.firebase:firebase-perf:19.1.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-database:19.7.0'
     //implementation 'com.google.firebase:firebase-ads:20.0.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     // FCM Notification
     implementation 'com.google.firebase:firebase-messaging:21.1.0'
+
+    //Firebase Ui
+    implementation 'com.firebaseui:firebase-ui-database:7.1.1'
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 }

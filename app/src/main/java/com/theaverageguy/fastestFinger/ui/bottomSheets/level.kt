@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.theaverageguy.fastestFinger.R
 import com.theaverageguy.fastestFinger.databinding.LevelBinding
-import com.theaverageguy.fastestFinger.utils.AppSharePreference
+import com.theaverageguy.fastestFinger.ui.modelClasses.AppSharePreference
 import com.theaverageguy.fastestFinger.utils.utils.showToast
 
 
@@ -40,7 +40,10 @@ class level : BottomSheetDialogFragment(), View.OnClickListener {
         bind.easy.setOnClickListener(this)
         bind.medium.setOnClickListener(this)
         bind.hard.setOnClickListener(this)
-        appSharePreference = AppSharePreference(context)
+        appSharePreference =
+            AppSharePreference(
+                context
+            )
     }
 
     override fun onClick(v: View?) {

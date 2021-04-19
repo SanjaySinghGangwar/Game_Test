@@ -1,4 +1,4 @@
-package com.theaverageguy.fastestFinger.utils;
+package com.theaverageguy.fastestFinger.ui.modelClasses;
 
 
 import android.content.Context;

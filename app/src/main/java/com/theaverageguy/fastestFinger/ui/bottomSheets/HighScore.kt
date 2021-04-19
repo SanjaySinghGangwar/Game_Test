@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.theaverageguy.fastestFinger.databinding.HighScoreBinding
-import com.theaverageguy.fastestFinger.utils.AppSharePreference
+import com.theaverageguy.fastestFinger.ui.modelClasses.AppSharePreference
 
 
 class HighScore : BottomSheetDialogFragment() {
@@ -29,7 +29,10 @@ class HighScore : BottomSheetDialogFragment() {
     }
 
     private fun initAllComponents() {
-        appSharePreference = AppSharePreference(context)
+        appSharePreference =
+            AppSharePreference(
+                context
+            )
         bind.highScore.text = "High Score : ${appSharePreference?.highScore}"
     }
 
