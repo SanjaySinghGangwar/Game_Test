@@ -8,7 +8,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.iid.FirebaseInstanceId
 import com.theaverageguy.fastestFinger.R
-import com.theaverageguy.fastestFinger.utils.utils.logMe
+import com.theaverageguy.fastestFinger.utils.Utils.logMe
 
 class splahScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

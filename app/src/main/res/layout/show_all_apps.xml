@@ -13,9 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
         app:cardCornerRadius="10dp"
-        app:cardElevation="5dp"
+        app:cardElevation="3dp"
         app:cardPreventCornerOverlap="true">
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -28,7 +28,6 @@
 
 
             <ImageView
-
                 android:id="@+id/image"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
@@ -44,7 +43,10 @@
             <TextView
                 android:id="@+id/quote"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:justificationMode="none"
+                android:textAlignment="center"
+                android:textStyle="normal" />
 
             <Button
                 android:id="@+id/install"

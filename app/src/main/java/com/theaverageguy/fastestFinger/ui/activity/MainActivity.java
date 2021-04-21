@@ -18,7 +18,7 @@ import androidx.core.content.ContextCompat;
 import com.theaverageguy.fastestFinger.R;
 import com.theaverageguy.fastestFinger.databinding.ActivityMainBinding;
 import com.theaverageguy.fastestFinger.service.musicService;
-import com.theaverageguy.fastestFinger.ui.modelClasses.AppSharePreference;
+import com.theaverageguy.fastestFinger.modelClasses.AppSharePreference;
 
 import java.util.ArrayList;
 import java.util.List;

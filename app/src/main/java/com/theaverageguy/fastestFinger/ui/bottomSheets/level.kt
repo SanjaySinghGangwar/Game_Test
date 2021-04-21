@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.theaverageguy.fastestFinger.R
 import com.theaverageguy.fastestFinger.databinding.LevelBinding
-import com.theaverageguy.fastestFinger.ui.modelClasses.AppSharePreference
-import com.theaverageguy.fastestFinger.utils.utils.showToast
+import com.theaverageguy.fastestFinger.modelClasses.AppSharePreference
+import com.theaverageguy.fastestFinger.utils.Utils.showToast
 
 
 class level : BottomSheetDialogFragment(), View.OnClickListener {

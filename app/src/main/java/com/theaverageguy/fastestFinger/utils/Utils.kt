@@ -1,13 +1,14 @@
 package com.theaverageguy.fastestFinger.utils
 
 import android.content.Context
+import android.net.ConnectivityManager
 import android.util.Log
 import android.view.View
 import android.view.Window
 import android.widget.Toast
 
 
-object utils {
+object Utils {
     fun showToast(context: Context, message: String) {
         Toast.makeText(context, message, Toast.LENGTH_LONG).show()
     }
@@ -37,4 +38,10 @@ object utils {
         Log.i("SANJAY ", "log: $message")
     }
 
+    fun isOnline(context: Context): Boolean {
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val ni = connectivityManager.activeNetworkInfo
+        return ni != null && ni.isAvailable && ni.isConnected
+    }
 }

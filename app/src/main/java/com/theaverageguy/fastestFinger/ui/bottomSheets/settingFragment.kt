@@ -10,7 +10,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.theaverageguy.fastestFinger.R
 import com.theaverageguy.fastestFinger.databinding.FragmentSettingBinding
 import com.theaverageguy.fastestFinger.service.musicService
-import com.theaverageguy.fastestFinger.ui.modelClasses.AppSharePreference
+import com.theaverageguy.fastestFinger.modelClasses.AppSharePreference
 
 class settingFragment : BottomSheetDialogFragment(), CompoundButton.OnCheckedChangeListener {
 

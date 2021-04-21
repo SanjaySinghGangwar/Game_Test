@@ -1,4 +1,4 @@
-package com.theaverageguy.fastestFinger.ui.modelClasses
+package com.theaverageguy.fastestFinger.modelClasses
 
 class AppsModelClass {
     var link: String = ""
